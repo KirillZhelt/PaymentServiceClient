@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PaymentServiceClient</string>
+    <string name="service_name">Service name:</string>
+    <string name="method_name">Method name:</string>
+    <string name="date_from_button">Choose date from</string>
+    <string name="choose_date_to">Choose date to</string>
+    <string name="pay_button">Pay</string>
+    <string name="result">Result:</string>
 </resources>
