@@ -78,10 +78,10 @@
         android:text="@string/pay_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment_payment_date_from_tv" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/fragment_payment_date_from_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -92,7 +92,7 @@
         tools:text="12 June 2010" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/fragment_payment_date_to_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
