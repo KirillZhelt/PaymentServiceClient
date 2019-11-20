@@ -6,4 +6,5 @@
     <string name="choose_date_to">Choose date to</string>
     <string name="pay_button">Pay</string>
     <string name="result">Result:</string>
+    <string name="invalid_data">Invalid data</string>
 </resources>

@@ -19,12 +19,23 @@ class PaymentViewModel : ViewModel() {
         it.format(FORMATTER)
     }
 
+    private val _paymentResult = MutableLiveData<String>()
+    val paymentResult: LiveData<String> = _paymentResult
+
     fun onDateFromPicked(year: Int, month: Int, day: Int) {
-        _dateFrom.value = LocalDate.of(year, month, day)
+        _dateFrom.value = LocalDate.of(year, month + 1, day)
     }
 
     fun onDateToPicked(year: Int, month: Int, day: Int) {
-        _dateTo.value = LocalDate.of(year, month, day)
+        _dateTo.value = LocalDate.of(year, month + 1, day)
+    }
+
+    fun pay(serviceName: String, methodName: String, invalidDataMessageString: String) {
+        if (serviceName.isNotEmpty() && methodName.isNotEmpty() && _dateFrom.value?.isBefore(_dateTo.value) == true) {
+            _paymentResult.value = "OK"
+        } else {
+            _paymentResult.value = invalidDataMessageString
+        }
     }
 
     companion object {

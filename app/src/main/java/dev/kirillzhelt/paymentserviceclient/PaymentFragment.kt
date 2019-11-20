@@ -62,6 +62,11 @@ class PaymentFragment : Fragment() {
         dateFromPickerDialog = createDatePickerDialog(viewModel::onDateFromPicked)
         dateToPickerDialog = createDatePickerDialog(viewModel::onDateToPicked)
 
+        payButton.setOnClickListener {
+            viewModel.pay(serviceNameEditText.text.toString(), methodNameEditText.text.toString(),
+                getString(R.string.invalid_data))
+        }
+
         viewModel.dateFrom.observe(this, Observer { date ->
             dateFromTextView.text = date
         })
@@ -69,6 +74,11 @@ class PaymentFragment : Fragment() {
         viewModel.dateTo.observe(this, Observer { date ->
             dateToTextView.text = date
         })
+
+        viewModel.paymentResult.observe(this, Observer {
+            resultTextView.text = it
+        })
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
